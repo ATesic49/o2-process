@@ -12,3 +12,6 @@
 	--font-mono: var(--font-geist-mono);
 	--font-logo: var(--font-osfalt);
 }
+.strela {
+	clip-path: polygon(0 0, 56% 0, 50% 0, 100% 50%, 50% 100%, 50% 100%, 0 100%);
+}

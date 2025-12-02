@@ -9,7 +9,7 @@ export default function DashedBorderBox({
 }) {
 	return (
 		<div
-			className={`relative  p-4 `}
+			className={`relative z-20  p-4 `}
 			style={{
 				background:
 					"linear-gradient(to right, transparent 50%, #f3f4f6 50%) top/16px 3px repeat-x," +

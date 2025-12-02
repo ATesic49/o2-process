@@ -122,7 +122,7 @@ const Hero = () => {
 				}}
 				src={heroSlika}
 				alt=""
-				className="absolute left-0 h-[calc(100%+40px)] object-top object-cover"
+				className="absolute left-0 h-[calc(100%+40px)] w-full object-top object-cover"
 			/>
 		</div>
 	);

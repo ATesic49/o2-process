@@ -15,14 +15,16 @@ const list = [
 const NavBar = () => {
 	return (
 		<div className="flex overflow- gap-8 justify-end item-center  text-blue-950 sticky top-0 py-8 bg-blue-50 px-8 z-40 shadow">
-			<h1 className="text-9xl absolute font-bold bottom-2 translate-y-1/2 left-8 font-logo">
-				O
-			</h1>
-			<div className="z-50 overflow-hidden translate-y-full left-0 w-full h-32 absolute bottom-0">
-				<div className="z-30 text-blue-50 text-9xl absolute font-bold bottom-2 -translate-y-1/2 left-8 font-logo">
-					O <span className="text-6xl absolute -bottom-2">2</span>
+			<Link href={"/"}>
+				<h1 className="text-9xl absolute font-bold bottom-2 translate-y-1/2 left-8 font-logo">
+					O
+				</h1>
+				<div className="z-50 overflow-hidden translate-y-full left-0 w-full h-32 absolute bottom-0">
+					<div className="z-30 text-blue-50 text-9xl absolute font-bold bottom-2 -translate-y-1/2 left-8 font-logo">
+						O <span className="text-6xl absolute -bottom-2">2</span>
+					</div>
 				</div>
-			</div>
+			</Link>
 
 			{list.map((li) => (
 				<Link
