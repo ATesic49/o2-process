@@ -815,4 +815,198 @@ export const listaMenija = [
 			),
 		},
 	],
+	[
+		{
+			ime: "Procesna Merna Oprema",
+			desno: (
+				<>
+					<h3 className="text-gray-700 text-xl font-semibold">
+						Procesna merna oprema
+					</h3>
+					<p className="text-gray-500 text-sm">
+						Mi smo pouzdan partner, koji primenom vrhunske tehnologije, povećava
+						pouzdanost, produktivnost i profitabilnost proizvodnih procesa naših
+						klijenata.
+					</p>
+					<p className="-mt-4 text-gray-500 text-sm">
+						Pomoću inovativnih rešenja i sofisticiranih procesnih merenja
+						omogućavamo postizanje vrhunskih rezultata i očuvanje životne
+						sredine.
+					</p>
+					<Link
+						className="text-sm text-blue-950 underline-2"
+						href={"/proizvodi/industrijski-meraci-protoka"}
+					>
+						Industrijski meraci protoka
+					</Link>
+					<Link
+						className="text-sm text-blue-950 underline-2"
+						href={"/proizvodi/merenje-protoka"}
+					>
+						Merenje protoka na delimično ispunjenim cevima i kanalima
+					</Link>
+				</>
+			),
+		},
+		{
+			ime: "Data Logeri i RTU",
+			desno: (
+				<>
+					<h3 className="text-gray-700 text-xl font-semibold">
+						Data Logeri i RTU
+					</h3>
+					<p className="text-gray-500 text-sm">
+						Mi smo pouzdan partner, koji primenom vrhunske tehnologije, povećava
+						pouzdanost, produktivnost i profitabilnost proizvodnih procesa naših
+						klijenata.
+					</p>
+					<p className="-mt-4 text-gray-500 text-sm">
+						Pomoću inovativnih rešenja i sofisticiranih procesnih merenja
+						omogućavamo postizanje vrhunskih rezultata i očuvanje životne
+						sredine.
+					</p>
+					<Link
+						className="text-sm text-blue-950 underline-2"
+						href={"/proizvodi/industrijski-meraci-protoka"}
+					>
+						Industrijski meraci protoka
+					</Link>
+					<Link
+						className="text-sm text-blue-950 underline-2"
+						href={"/proizvodi/merenje-protoka"}
+					>
+						Merenje protoka na delimično ispunjenim cevima i kanalima
+					</Link>
+				</>
+			),
+		},
+		{
+			ime: "Data Logeri i RTU",
+			desno: (
+				<>
+					<h3 className="text-gray-700 text-xl font-semibold">
+						Procesna merna oprema
+					</h3>
+					<p className="text-gray-500 text-sm">
+						Mi smo pouzdan partner, koji primenom vrhunske tehnologije, povećava
+						pouzdanost, produktivnost i profitabilnost proizvodnih procesa naših
+						klijenata.
+					</p>
+					<p className="-mt-4 text-gray-500 text-sm">
+						Pomoću inovativnih rešenja i sofisticiranih procesnih merenja
+						omogućavamo postizanje vrhunskih rezultata i očuvanje životne
+						sredine.
+					</p>
+					<Link
+						className="text-sm text-blue-950 underline-2"
+						href={"/proizvodi/industrijski-meraci-protoka"}
+					>
+						Industrijski meraci protoka
+					</Link>
+					<Link
+						className="text-sm text-blue-950 underline-2"
+						href={"/proizvodi/merenje-protoka"}
+					>
+						Merenje protoka na delimično ispunjenim cevima i kanalima
+					</Link>
+				</>
+			),
+		},
+		{
+			ime: "Data Logeri i RTU",
+			desno: (
+				<>
+					<h3 className="text-gray-700 text-xl font-semibold">
+						Procesna merna oprema
+					</h3>
+					<p className="text-gray-500 text-sm">
+						Mi smo pouzdan partner, koji primenom vrhunske tehnologije, povećava
+						pouzdanost, produktivnost i profitabilnost proizvodnih procesa naših
+						klijenata.
+					</p>
+					<p className="-mt-4 text-gray-500 text-sm">
+						Pomoću inovativnih rešenja i sofisticiranih procesnih merenja
+						omogućavamo postizanje vrhunskih rezultata i očuvanje životne
+						sredine.
+					</p>
+					<Link
+						className="text-sm text-blue-950 underline-2"
+						href={"/proizvodi/industrijski-meraci-protoka"}
+					>
+						Industrijski meraci protoka
+					</Link>
+					<Link
+						className="text-sm text-blue-950 underline-2"
+						href={"/proizvodi/merenje-protoka"}
+					>
+						Merenje protoka na delimično ispunjenim cevima i kanalima
+					</Link>
+				</>
+			),
+		},
+		{
+			ime: "Data Logeri i RTU",
+			desno: (
+				<>
+					<h3 className="text-gray-700 text-xl font-semibold">
+						Procesna merna oprema
+					</h3>
+					<p className="text-gray-500 text-sm">
+						Mi smo pouzdan partner, koji primenom vrhunske tehnologije, povećava
+						pouzdanost, produktivnost i profitabilnost proizvodnih procesa naših
+						klijenata.
+					</p>
+					<p className="-mt-4 text-gray-500 text-sm">
+						Pomoću inovativnih rešenja i sofisticiranih procesnih merenja
+						omogućavamo postizanje vrhunskih rezultata i očuvanje životne
+						sredine.
+					</p>
+					<Link
+						className="text-sm text-blue-950 underline-2"
+						href={"/proizvodi/industrijski-meraci-protoka"}
+					>
+						Industrijski meraci protoka
+					</Link>
+					<Link
+						className="text-sm text-blue-950 underline-2"
+						href={"/proizvodi/merenje-protoka"}
+					>
+						Merenje protoka na delimično ispunjenim cevima i kanalima
+					</Link>
+				</>
+			),
+		},
+		{
+			ime: "Data",
+			desno: (
+				<>
+					<h3 className="text-gray-700 text-xl font-semibold">
+						SAMO OBICAN DATA
+					</h3>
+					<p className="text-gray-500 text-sm">
+						Mi smo pouzdan partner, koji primenom vrhunske tehnologije, povećava
+						pouzdanost, produktivnost i profitabilnost proizvodnih procesa naših
+						klijenata.
+					</p>
+					<p className="-mt-4 text-gray-500 text-sm">
+						Pomoću inovativnih rešenja i sofisticiranih procesnih merenja
+						omogućavamo postizanje vrhunskih rezultata i očuvanje životne
+						sredine.
+					</p>
+					<Link
+						className="text-sm text-blue-950 underline-2"
+						href={"/proizvodi/industrijski-meraci-protoka"}
+					>
+						Industrijski meraci protoka
+					</Link>
+					<Link
+						className="text-sm text-blue-950 underline-2"
+						href={"/proizvodi/merenje-protoka"}
+					>
+						Merenje protoka na delimično ispunjenim cevima i kanalima
+					</Link>
+				</>
+			),
+		},
+	],
 ];
