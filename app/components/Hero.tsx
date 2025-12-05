@@ -110,6 +110,7 @@ const Hero = () => {
 
 	return (
 		<div
+			id="hero"
 			ref={heroRef}
 			className="relative w-full h-[90vh] min-h-[calc(120*4px)] overflow-hidden"
 		>

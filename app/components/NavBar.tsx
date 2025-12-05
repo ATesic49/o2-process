@@ -1,9 +1,10 @@
 "use client";
 import Link from "next/link";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import NavMeni from "./NavMeni";
 import { listaMenija } from "./listeMenija";
 import { usePathname } from "next/navigation";
+import { useHeroThreshold } from "./useHeroTreshold";
 const list = [
 	"proizvodi",
 	"rešenja",
@@ -21,14 +22,22 @@ nasaLista.push(list[3]);
 nasaLista.push(list[5]);
 
 const NavBar = () => {
+	const isPastHero = useHeroThreshold({
+		heroId: "hero", // ID u Hero sekciji
+		navbarId: "navbar", // ID na ovom divu ispod
+		onlyOnPath: "/", // radi samo na home strani
+	});
+
 	const pathname = usePathname();
 	const [otvoren, setOtvoren] = useState(false);
 	useEffect(() => {
 		setOtvoren(false);
 	}, [pathname]);
 	const [birac, setBirac] = useState(0);
+
 	return (
 		<div
+			id="navbar"
 			className={`flex overflow- gap-8 justify-end item-center  text-blue-950 sticky top-0 py-8 ${otvoren ? "bg-blue-100" : "bg-blue-50"} duration-100 px-8 z-40 shadow`}
 		>
 			<NavMeni
@@ -40,13 +49,15 @@ const NavBar = () => {
 			<>
 				<Link
 					href={"/"}
-					className={`text-9xl absolute font-bold  left-8 font-logo ${otvoren ? "scale-50 bottom-1/2 translate-y-1/2" : "scale-100 bottom-2 translate-y-1/2 "} duration-200`}
+					className={`text-9xl absolute font-bold  left-8 font-logo ${otvoren || isPastHero ? "scale-50 bottom-1/2 translate-y-1/2" : "scale-100 bottom-2 translate-y-1/2 "} duration-200`}
 				>
 					O<span className="text-6xl absolute -bottom-2">2</span>
 				</Link>
-				<div className="z-50 overflow-hidden translate-y-full left-0 w-full h-32 absolute bottom-0">
+				<div
+					className={` overflow-hidden translate-y-full left-0 w-full h-32 absolute bottom-0 ${isPastHero && "fixed"}`}
+				>
 					<div
-						className={`z-0 ${otvoren ? "opacity-0" : "opacity-100"} duration-50  text-blue-50 text-9xl absolute font-bold bottom-2 -translate-y-1/2 left-8 font-logo`}
+						className={`z-0 ${otvoren || isPastHero ? "opacity-0" : "opacity-100"} duration-50  text-blue-50 text-9xl absolute font-bold bottom-2 -translate-y-1/2 left-8 font-logo drop-shadow-lg`}
 					>
 						<Link href={"/"}>
 							O <span className="text-6xl absolute -bottom-2">2</span>
@@ -113,4 +124,3 @@ const NavBar = () => {
 };
 
 export default NavBar;
-3;
