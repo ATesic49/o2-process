@@ -30,7 +30,7 @@ const NavBar = () => {
 	});
 
 	const pathname = usePathname();
-	const [otvoren, setOtvoren] = useState(false);
+	const [otvoren, setOtvoren] = useState(pathname != "/" || false);
 	useEffect(() => {
 		setOtvoren(false);
 	}, [pathname]);
@@ -76,6 +76,7 @@ const NavBar = () => {
 				otvoren={otvoren}
 				setOtvoren={setOtvoren}
 			></NavMeni>
+			{/* <MobileNav /> */}
 			<>
 				<Link
 					href={"/"}
@@ -148,22 +149,6 @@ const NavBar = () => {
 					</Link>
 				);
 			})}
-			return (
-			<>
-				<MobileNav />
-
-				<div
-					ref={navbarRef}
-					id="navbar"
-					className={`hidden lg:flex gap-8 justify-end items-center
-        text-blue-950 sticky top-0 py-8 px-8
-        ${otvoren ? "bg-blue-100" : "bg-blue-50"}
-        duration-100 z-40 shadow`}
-				>
-					{/* Ovde ostaje kompletan postojeći desktop navbar */}
-				</div>
-			</>
-			);
 		</div>
 	);
 };

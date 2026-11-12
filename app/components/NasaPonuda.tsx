@@ -19,7 +19,8 @@ const NasaPonuda = () => {
 					inovativnih rešenja...
 				</p>
 			</div>
-			<div className="grid grid-cols-3 grid-rows-2 gap-8 w-full h-full">
+			<div className="grid grid-cols-2 grid-rows-2 px-16 gap-x-16 gap-8 w-full h-full">
+				{/* <div className="px-6 pb-28 md:px-12 lg:px-20"> */}
 				<Kartica />
 				<Kartica />
 				<Kartica />
