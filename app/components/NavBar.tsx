@@ -5,6 +5,7 @@ import NavMeni from "./NavMeni";
 import { listaMenija } from "./listeMenija";
 import { usePathname } from "next/navigation";
 import { useHeroThreshold } from "./useHeroTreshold";
+import MobileNav from "./MobileNav";
 const list = [
 	"proizvodi",
 	"rešenja",
@@ -34,11 +35,40 @@ const NavBar = () => {
 		setOtvoren(false);
 	}, [pathname]);
 	const [birac, setBirac] = useState(0);
+	const navbarRef = useRef<HTMLDivElement>(null);
+	useEffect(() => {
+		if (!otvoren) return;
 
+		const handleClickOutside = (event: PointerEvent) => {
+			if (
+				navbarRef.current &&
+				!navbarRef.current.contains(event.target as Node)
+			) {
+				setOtvoren(false);
+			}
+		};
+
+		document.addEventListener("pointerdown", handleClickOutside);
+
+		return () => {
+			document.removeEventListener("pointerdown", handleClickOutside);
+		};
+	}, [otvoren]);
+	useEffect(() => {
+		if (otvoren) {
+			document.body.style.overflow = "hidden";
+		} else {
+			document.body.style.overflow = "";
+		}
+
+		return () => {
+			document.body.style.overflow = "";
+		};
+	}, [otvoren]);
 	return (
 		<div
 			id="navbar"
-			className={`flex overflow- gap-8 justify-end item-center  text-blue-950 sticky top-0 py-8 ${otvoren ? "bg-blue-100" : "bg-blue-50"} duration-100 px-8 z-40 shadow`}
+			className={`flex overflow- gap-8 justify-end item-center  text-blue-950 sticky  top-0 py-8 ${otvoren ? "bg-blue-100" : "bg-blue-50"} duration-100 px-8 z-40 shadow`}
 		>
 			<NavMeni
 				ime={nasaLista[birac]}
@@ -65,7 +95,6 @@ const NavBar = () => {
 					</div>
 				</div>
 			</>
-
 			{list.map((li) => {
 				if (nasaLista.includes(li)) {
 					const nadjiBirac = nasaLista.indexOf(li);
@@ -119,6 +148,22 @@ const NavBar = () => {
 					</Link>
 				);
 			})}
+			return (
+			<>
+				<MobileNav />
+
+				<div
+					ref={navbarRef}
+					id="navbar"
+					className={`hidden lg:flex gap-8 justify-end items-center
+        text-blue-950 sticky top-0 py-8 px-8
+        ${otvoren ? "bg-blue-100" : "bg-blue-50"}
+        duration-100 z-40 shadow`}
+				>
+					{/* Ovde ostaje kompletan postojeći desktop navbar */}
+				</div>
+			</>
+			);
 		</div>
 	);
 };

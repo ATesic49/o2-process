@@ -55,7 +55,7 @@ const NavMeni = ({
 		<AnimatePresence>
 			{otvoren && (
 				<motion.div
-					className="absolute right-0 top-full h-[80vh] bg-blue-100 z-1000 grid grid-cols-7 auto-rows-[40px] content-start p-8 left-0 gap-4 gap-x-8"
+					className="absolute right-0 top-full h-screen bg-blue-100 z-1000 grid grid-cols-7 auto-rows-[40px] content-start p-8 left-0 gap-4 gap-x-8"
 					initial={{ opacity: 0, y: -20 }}
 					animate={{ opacity: 1, y: 0 }}
 					exit={{ opacity: 0, y: 20 }}
