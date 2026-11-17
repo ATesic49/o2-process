@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import NavMeni from "./NavMeni";
 import { listaMenija } from "./listeMenija";
 import { usePathname } from "next/navigation";
@@ -16,6 +16,17 @@ const list = [
 	"o nama",
 	"kontakt",
 ];
+function handleSlug(text: string): string {
+	return text
+		.toLowerCase()
+		.replace(/đ/g, "dj")
+		.replace(/š/g, "s")
+		.replace(/č/g, "c")
+		.replace(/ć/g, "c")
+		.replace(/ž/g, "z")
+		.trim()
+		.replace(/\s+/g, "-");
+}
 const nasaLista: string[] = [];
 nasaLista.push(list[0]);
 nasaLista.push(list[1]);
@@ -72,7 +83,8 @@ const NavBar = () => {
 		>
 			<NavMeni
 				ime={nasaLista[birac]}
-				listaMenija={listaMenija[birac]}
+				birac={birac}
+				setBirac={setBirac}
 				otvoren={otvoren}
 				setOtvoren={setOtvoren}
 			></NavMeni>
@@ -98,12 +110,12 @@ const NavBar = () => {
 			</>
 			{list.map((li) => {
 				if (nasaLista.includes(li)) {
-					const nadjiBirac = nasaLista.indexOf(li);
+					const nadjiBirac = list.indexOf(li);
 					return (
 						<Link
 							key={li}
 							className="capitalize text-sm flex gap-1  font-semibold text-blue-950 items-center-safe "
-							href={`/${li.replaceAll(" ", "-")}`}
+							href={`/${handleSlug(li.replaceAll(" ", "-"))}`}
 						>
 							{li}
 							<svg

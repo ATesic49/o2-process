@@ -11,15 +11,15 @@ const NasaPonuda = () => {
 	return (
 		<div className="bg-gray-100 py-16  flex flex-col px-8 gap-16">
 			<div className="flex mx-auto flex-col gap-4">
-				<h2 className="text-xl  font-medium mx-auto underline underline-offset-8">
-					Naša ponuda sa vizijom
+				<h2 className=" mt-4 text-3xl  tracking-tight md:text-4x font-semibold  mx-auto  underline-offset-12 underline uppercase ">
+					Naša ponuda sa vizijom.
 				</h2>
-				<p className="text-gray-500">
+				<p className="text-blue-950/70 mt-3">
 					Mi smo pouzdani partneri koji primenom vrhunske tehnilogije,
 					inovativnih rešenja...
 				</p>
 			</div>
-			<div className="grid grid-cols-2 grid-rows-2 px-16 gap-x-16 gap-8 w-full h-full">
+			<div className="grid grid-cols-3 grid-rows-2 px-16 gap-x-16 gap-8 w-full h-full">
 				{/* <div className="px-6 pb-28 md:px-12 lg:px-20"> */}
 				<Kartica />
 				<Kartica />

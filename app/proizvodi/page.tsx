@@ -108,7 +108,7 @@ export default function ProizvodiPage() {
 			</section>
 
 			{/* UVODNI PASUS */}
-			<section className="px-6 py-20 md:px-12 lg:px-20">
+			<section className="px-6 py-20 md:px-12 lg:px-20 relative">
 				<div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-12 lg:gap-16">
 					<div className="lg:col-span-4">
 						<span className="text-xs font-semibold uppercase tracking-[0.2em] text-green-700">
@@ -141,8 +141,15 @@ export default function ProizvodiPage() {
 			{/* KATEGORIJE */}
 			<section
 				id="kategorije"
-				className="scroll-mt-28 px-6 pb-28 md:px-12 lg:px-20"
+				className="scroll-mt-28 px-6 pb-28 md:px-12 lg:px-20 relative"
 			>
+				{/* <div
+					className="pointer-events-none absolute right-0 top-0 h-full w-full -z-10 opacity-20"
+					style={{
+						backgroundImage:
+							"repeating-linear-gradient(135deg, #86efac 0px, #86efac 1px, transparent 1px, transparent 32px)",
+					}}
+				/> */}
 				<div className="mx-auto max-w-7xl">
 					<div className="mb-12 flex flex-wrap items-end justify-between gap-5 border-b border-blue-950/15 pb-6">
 						<div>

@@ -1,9 +1,36 @@
 "use client";
 
 import Link from "next/link";
-import React, { useEffect, useState } from "react";
+import React, { Dispatch, SetStateAction, useEffect, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { typeListaMeni } from "./listeMenija";
+import { listaMenija as listaMenij } from "./listeMenija";
+const list = [
+	"proizvodi",
+	"rešenja",
+	"servis",
+	"inžinjering",
+	"partneri",
+	"industrije",
+	"o nama",
+	"kontakt",
+];
+function handleSlug(text: string): string {
+	return text
+		.toLowerCase()
+		.replace(/đ/g, "dj")
+		.replace(/š/g, "s")
+		.replace(/č/g, "c")
+		.replace(/ć/g, "c")
+		.replace(/ž/g, "z")
+		.trim()
+		.replace(/\s+/g, "-");
+}
+const nasaLista: string[] = [];
+nasaLista.push(list[0]);
+nasaLista.push(list[1]);
+nasaLista.push(list[3]);
+nasaLista.push(list[5]);
 
 const Kartica = ({ children }: { children: React.ReactNode }) => {
 	return (
@@ -35,16 +62,18 @@ const NavMeni = ({
 	otvoren,
 	ime,
 	setOtvoren,
-	listaMenija,
+	birac,
+	setBirac,
 }: {
+	birac: number;
+	setBirac: Dispatch<SetStateAction<number>>;
 	ime: string;
 	otvoren: boolean;
 	setOtvoren: React.Dispatch<React.SetStateAction<boolean>>;
-	listaMenija: typeListaMeni[];
 }) => {
 	const [desnoState, setDesnoState] = useState(0);
 	const [fade, setFade] = useState(false);
-
+	const listaMenija = listaMenij[birac];
 	useEffect(() => {
 		setFade(true);
 		const t = setTimeout(() => setFade(false), 200);
@@ -52,56 +81,84 @@ const NavMeni = ({
 	}, [desnoState]);
 
 	return (
+		// <AnimatePresence>
+		// 	{otvoren && (
+		// 		<motion.div
+		// 			className="absolute right-0 top-full h-screen bg-blue-100 z-1000 grid grid-cols-4  content-start p-8 left-0 gap-4 gap-x-8"
+		// 			initial={{ opacity: 0, y: -20 }}
+		// 			animate={{ opacity: 1, y: 0 }}
+		// 			exit={{ opacity: 0, y: 20 }}
+		// 		>
+		// 			{listaMenija.map((element) => {
+		// 				const elNum = listaMenija.indexOf(element);
+		// 				if (elNum === 2) {
+		// 					return (
+		// 						<React.Fragment key={elNum}>
+		// 							<div
+		// 								style={{
+		// 									gridRow: `span ${Math.ceil(listaMenija.length / 2)}`,
+		// 								}}
+		// 								className="border-l-2 col-span-3 border-gray-400 w-full"
+		// 							>
+		// 								<motion.div
+		// 									className="w-full py-4 flex flex-col gap-8 p-12"
+		// 									animate={fade ? { opacity: 0 } : { opacity: 1 }}
+		// 								>
+		// 									{listaMenija[desnoState].desno}
+		// 								</motion.div>
+		// 							</div>
+		// 							<Kartica>
+		// 								<Link
+		// 									className="text-gray-600  text-left font-semibold text-base hover:underline underline-offset-2"
+		// 									onMouseEnter={() => setDesnoState(elNum)}
+		// 									href={`/${ime}/${element.ime.replaceAll(" ", "-").toLowerCase()}`}
+		// 								>
+		// 									{element.ime}
+		// 								</Link>
+		// 							</Kartica>
+		// 						</React.Fragment>
+		// 					);
+		// 				}
+		// 				return (
+		// 					<Kartica key={elNum}>
+		// 						<Link
+		// 							onMouseEnter={() => setDesnoState(elNum)}
+		// 							className="text-gray-600 font-semibold text-base hover:underline underline-offset-2"
+		// 							href={`/${ime}/${element.ime.replaceAll(" ", "-").toLowerCase()}`}
+		// 						>
+		// 							{element.ime}
+		// 						</Link>
+		// 					</Kartica>
+		// 				);
+		// 			})}
+		// 		</motion.div>
+		// 	)}
+		// </AnimatePresence>
 		<AnimatePresence>
 			{otvoren && (
-				<motion.div
-					className="absolute right-0 top-full h-screen bg-blue-100 z-1000 grid grid-cols-7 auto-rows-[40px] content-start p-8 left-0 gap-4 gap-x-8"
-					initial={{ opacity: 0, y: -20 }}
-					animate={{ opacity: 1, y: 0 }}
-					exit={{ opacity: 0, y: 20 }}
-				>
-					{listaMenija.map((element) => {
-						const elNum = listaMenija.indexOf(element);
-						if (elNum === 2) {
-							return (
-								<React.Fragment key={elNum}>
-									<div
-										style={{
-											gridRow: `span ${Math.ceil(listaMenija.length / 2)}`,
-										}}
-										className="border-l-2 col-span-3 border-gray-400 w-full"
-									>
-										<motion.div
-											className="w-full py-4 flex flex-col gap-8 p-12"
-											animate={fade ? { opacity: 0 } : { opacity: 1 }}
-										>
-											{listaMenija[desnoState].desno}
-										</motion.div>
-									</div>
-									<Kartica>
-										<Link
-											className="text-gray-600 text-left font-semibold text-base hover:underline underline-offset-2"
-											onMouseEnter={() => setDesnoState(elNum)}
-											href={`/${ime}/${element.ime.replaceAll(" ", "-").toLowerCase()}`}
-										>
-											{element.ime}
-										</Link>
-									</Kartica>
-								</React.Fragment>
-							);
-						}
-						return (
-							<Kartica key={elNum}>
-								<Link
-									onMouseEnter={() => setDesnoState(elNum)}
-									className="text-gray-600 font-semibold text-base hover:underline underline-offset-2"
-									href={`/${ime}/${element.ime.replaceAll(" ", "-").toLowerCase()}`}
-								>
-									{element.ime}
-								</Link>
-							</Kartica>
-						);
-					})}
+				<motion.div className="absolute right-0 top-full h-screen bg-blue-100 z-1000 grid grid-cols-4   md:p-16 lg:32 left-0 gap-4 gap-x-8">
+					<div className="grid grid-rows-9 h-full items-between font-medium md:text-lg ">
+						{list.map((li, i) => (
+							<Link
+								className={`${birac == i && "font-extrabold"} capitalize`}
+								onMouseOver={() => setBirac(i)}
+								href={`/${handleSlug(li.replaceAll(" ", "-"))}`}
+							>
+								{li}
+							</Link>
+						))}
+					</div>{" "}
+					<div className="grid grid-rows-8 h-full items-between bg-red-200">
+						<p>proizvodi</p>
+						<p>proizvodi</p>
+						<p>proizvodi</p>
+						<p>proizvodi</p>
+						<p>proizvodi</p>
+						<p>proizvodi</p>
+						<p>proizvodi</p>
+						<p>proizvodi</p>
+					</div>{" "}
+					<div className="col-span-2 bg-red-200 ">padasd</div>
 				</motion.div>
 			)}
 		</AnimatePresence>
