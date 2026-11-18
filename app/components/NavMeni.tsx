@@ -152,7 +152,7 @@ const NavMeni = ({
 						))}
 					</div>{" "}
 					<div className="grid grid-rows-8 h-full items-between ">
-						{listaMenija.length ? (
+						{listaMenija.length > 1 ? (
 							<>
 								{listaMenija.map((element, i) => {
 									return (
