@@ -5,6 +5,7 @@ import React, { Dispatch, SetStateAction, useEffect, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { typeListaMeni } from "./listeMenija";
 import { listaMenija as listaMenij } from "./listeMenija";
+import NavPreview from "./NavPreview";
 const list = [
 	"proizvodi",
 	"rešenja",
@@ -74,7 +75,6 @@ const NavMeni = ({
 	const [desnoState, setDesnoState] = useState(0);
 	const [fade, setFade] = useState(false);
 	const listaMenija = listaMenij[birac];
-	console.log(listaMenija, "lili");
 
 	useEffect(() => {
 		setFade(true);
@@ -138,8 +138,8 @@ const NavMeni = ({
 		// </AnimatePresence>
 		<AnimatePresence>
 			{otvoren && (
-				<motion.div className="absolute right-0 top-full h-screen bg-blue-100 z-1000 grid grid-cols-4   md:p-16 lg:32 left-0 gap-4 gap-x-8">
-					<div className="grid grid-rows-9 h-full items-between font-medium md:text-lg ">
+				<motion.div className="absolute right-0 top-full h-screen bg-blue-100 z-1000 grid grid-cols-4  md:p-8 lg left-0 gap-4 gap-x-8 overflow-hidden">
+					<div className="flex border-r border-blue-950 flex-col gap-4 h-auto items-start font-medium md:text-lg ">
 						{list.map((li, i) => (
 							<Link
 								key={i}
@@ -153,42 +153,43 @@ const NavMeni = ({
 					</div>{" "}
 					{listaMenija.length > 1 ? (
 						<>
-							<div className="grid grid-rows-8 h-full items-between ">
+							<div className="flex  flex-col gap-4 h-auto items-start justify-start ">
 								<>
 									{listaMenija.map((element, i) => {
 										return (
 											<Link
 												onMouseOver={() => setDesnoState(i)}
 												key={i}
-												href={element.ime}
+												href={`/${handleSlug(list[birac].replaceAll(" ", "-"))}/${handleSlug(element.ime.replaceAll(" ", "-"))}`}
+												className={desnoState == i ? "font-medium" : " "}
 											>
-												{listaMenija.length}
 												{element.ime}
 											</Link>
 										);
 									})}
 								</>
 							</div>{" "}
-							<div className="col-span-2 h-full ">
+							<div className="col-span-2  ">
 								{listaMenija[desnoState]
 									? listaMenija[desnoState].desno
 									: "dasd"}
 							</div>
 						</>
 					) : (
-						<div className="w-full flex flex-col items-center gap-4 col-span-3 relative">
-							<h3 className="w-full text-center text-4xl font-semibold">
-								Partneri
-							</h3>
-							<div className="pointer-events-none justify-center absolute gap-12 top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 h-[500px] w-[500px] rounded-full bg-green-400/50 blur-[110px] -z-10" />
-							<p className="text-balance text-center mt-8 max-w-[30em]">
-								Ljudi koji nam pomazu da radimo ono sto volimo da radimo. Oni
-								koji znaju. Oni koji magiju cine stvarnom
-							</p>
-							<button className="border-blue-950 text-lg cursor-pointer px-4 py-2 font-medium opacity-85 rounded-md border-2 mt-12">
-								Klikni ovde
-							</button>
-						</div>
+						// <div className="w-full flex flex-col items-center gap-4 col-span-3 relative">
+						// 	<h3 className="w-full text-center text-4xl font-semibold">
+						// 		Partneri
+						// 	</h3>
+						// 	<div className="pointer-events-none justify-center absolute gap-12 top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 h-[500px] w-[500px] rounded-full bg-green-400/50 blur-[110px] -z-10" />
+						// 	<p className="text-balance text-center mt-8 max-w-[30em]">
+						// 		Ljudi koji nam pomazu da radimo ono sto volimo da radimo. Oni
+						// 		koji znaju. Oni koji magiju cine stvarnom
+						// 	</p>
+						// 	<button className="border-blue-950 text-lg cursor-pointer px-4 py-2 font-medium opacity-85 rounded-md border-2 mt-12">
+						// 		Klikni ovde
+						// 	</button>
+						// </div>
+						<NavPreview birac={birac} />
 					)}
 				</motion.div>
 			)}

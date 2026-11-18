@@ -145,25 +145,23 @@ export const listaMenija = [
 						Industrijski Regulacioni Ventili
 					</Link>
 
-					<div className="text-sm flex text-blue-950 underline-offset-2">
-						<Link
-							className="underline"
-							href={
-								"/proizvodi/ventili-za-regulaciju-pritiska-sa-dva-stepena-regulacije"
-							}
-						>
-							Ventili za regulaciju pritiska sa dva stepena regulacije
-						</Link>
+					<Link
+						className="underline"
+						href={
+							"/proizvodi/ventili-za-regulaciju-pritiska-sa-dva-stepena-regulacije"
+						}
+					>
+						Ventili za regulaciju pritiska sa dva stepena regulacije
+					</Link>
 
-						<Link
-							className="underline"
-							href={
-								"/proizvodi/ventili-za-regulaciju-pritiska-sa-motornim-pogonom"
-							}
-						>
-							Ventili za regulaciju pritiska sa motornim pogonom
-						</Link>
-					</div>
+					<Link
+						className="underline"
+						href={
+							"/proizvodi/ventili-za-regulaciju-pritiska-sa-motornim-pogonom"
+						}
+					>
+						Ventili za regulaciju pritiska sa motornim pogonom
+					</Link>
 				</div>
 			),
 		},
@@ -245,44 +243,6 @@ export const listaMenija = [
 	[
 		{
 			ime: "Procesna Merna Oprema",
-
-			desno: (
-				<div className="flex flex-col gap-4 ">
-					<h3 className="text-gray-700 text-xl font-semibold">
-						Procesna merna oprema
-					</h3>
-
-					<p className="text-gray-500 text-sm">
-						Mi smo pouzdan partner, koji primenom vrhunske tehnologije, povećava
-						pouzdanost, produktivnost i profitabilnost proizvodnih procesa naših
-						klijenata.
-					</p>
-
-					<p className="-mt-4 text-gray-500 text-sm">
-						Pomoću inovativnih rešenja i sofisticiranih procesnih merenja
-						omogućavamo postizanje vrhunskih rezultata i očuvanje životne
-						sredine.
-					</p>
-
-					<Link
-						className="text-sm text-blue-950 underline-2"
-						href={"/proizvodi/industrijski-meraci-protoka"}
-					>
-						Industrijski meraci protoka
-					</Link>
-
-					<Link
-						className="text-sm text-blue-950 underline-2"
-						href={"/proizvodi/merenje-protoka"}
-					>
-						Merenje protoka na delimično ispunjenim cevima i kanalima
-					</Link>
-				</div>
-			),
-		},
-
-		{
-			ime: "Data Logeri i RTU",
 
 			desno: (
 				<div className="flex flex-col gap-4 ">
