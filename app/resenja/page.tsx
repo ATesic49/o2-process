@@ -14,47 +14,47 @@ const resenja = [
 const linkoviResenja = [
 	{
 		naziv: "Rešenja za efikasno upravljanje u sistemu vodosnabdevanja",
-		href: "resenja-za-efikasno-upravljanje-u-sistemu-vodosnabdevanja/",
+		href: "resenja/resenja-za-efikasno-upravljanje-u-sistemu-vodosnabdevanja/",
 	},
 	{
 		naziv: "Rešenja za efikasno upravljanje u kanalizacionim sistemima",
-		href: "resenja-za-efikasno-upravljanje-u-kanalizacionim-sistemima/",
+		href: "resenja/resenja-za-efikasno-upravljanje-u-kanalizacionim-sistemima/",
 	},
 	{
 		naziv: "Profilisana merna suženja prilagođena zahtevu klijenata",
-		href: "proizvodnja-profilisanih-mernih-suzenja-po-meri/",
+		href: "resenja/proizvodnja-profilisanih-mernih-suzenja-po-meri/",
 	},
 	{
 		naziv: "Kompaktne crpne stanice po meri",
-		href: "proizvodnja-kompaktnih-crpnih-stanica-po-meri/",
+		href: "resenja/proizvodnja-kompaktnih-crpnih-stanica-po-meri/",
 	},
 	{
 		naziv: "Honeywell rešenja",
-		href: "honeywell-resenja/",
+		href: "resenja/honeywell-resenja/",
 	},
 	{
 		naziv: "Daljinski prenos podataka",
-		href: "daljinski-prenos-podataka/",
+		href: "resenja/daljinski-prenos-podataka/",
 	},
 	{
 		naziv: "SCADA",
-		href: "scada/",
+		href: "resenja/scada/",
 	},
 	{
 		naziv: "Software za praćenje opreme u mreži",
-		href: "software-za-pracenje-opreme-u-mrezi/",
+		href: "resenja/software-za-pracenje-opreme-u-mrezi/",
 	},
 	{
 		naziv: "Merenje količine materijala u silosima",
-		href: "merenje-kolicine-materijala-u-silosima/",
+		href: "resenja/merenje-kolicine-materijala-u-silosima/",
 	},
 	{
 		naziv: "Kontinualno merenje nivoa mulja u sedimentacionim bazenima",
-		href: "kontinualno-merenje-nivoa-mulja-u-sedimentacionim-bazenima/",
+		href: "resenja/kontinualno-merenje-nivoa-mulja-u-sedimentacionim-bazenima/",
 	},
 	{
 		naziv: "Sistem za praćenje povratnog pranja filtera",
-		href: "sistem-za-pracenje-povratnog-pranja-filtera/",
+		href: "resenja/sistem-za-pracenje-povratnog-pranja-filtera/",
 	},
 ];
 

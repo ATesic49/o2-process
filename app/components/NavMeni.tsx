@@ -74,6 +74,8 @@ const NavMeni = ({
 	const [desnoState, setDesnoState] = useState(0);
 	const [fade, setFade] = useState(false);
 	const listaMenija = listaMenij[birac];
+	console.log(listaMenija, "lili");
+
 	useEffect(() => {
 		setFade(true);
 		const t = setTimeout(() => setFade(false), 200);
@@ -89,48 +91,48 @@ const NavMeni = ({
 		// 			animate={{ opacity: 1, y: 0 }}
 		// 			exit={{ opacity: 0, y: 20 }}
 		// 		>
-		// 			{listaMenija.map((element) => {
-		// 				const elNum = listaMenija.indexOf(element);
-		// 				if (elNum === 2) {
-		// 					return (
-		// 						<React.Fragment key={elNum}>
-		// 							<div
-		// 								style={{
-		// 									gridRow: `span ${Math.ceil(listaMenija.length / 2)}`,
-		// 								}}
-		// 								className="border-l-2 col-span-3 border-gray-400 w-full"
-		// 							>
-		// 								<motion.div
-		// 									className="w-full py-4 flex flex-col gap-8 p-12"
-		// 									animate={fade ? { opacity: 0 } : { opacity: 1 }}
-		// 								>
-		// 									{listaMenija[desnoState].desno}
-		// 								</motion.div>
-		// 							</div>
-		// 							<Kartica>
-		// 								<Link
-		// 									className="text-gray-600  text-left font-semibold text-base hover:underline underline-offset-2"
-		// 									onMouseEnter={() => setDesnoState(elNum)}
-		// 									href={`/${ime}/${element.ime.replaceAll(" ", "-").toLowerCase()}`}
-		// 								>
-		// 									{element.ime}
-		// 								</Link>
-		// 							</Kartica>
-		// 						</React.Fragment>
-		// 					);
-		// 				}
-		// 				return (
-		// 					<Kartica key={elNum}>
-		// 						<Link
-		// 							onMouseEnter={() => setDesnoState(elNum)}
-		// 							className="text-gray-600 font-semibold text-base hover:underline underline-offset-2"
-		// 							href={`/${ime}/${element.ime.replaceAll(" ", "-").toLowerCase()}`}
-		// 						>
-		// 							{element.ime}
-		// 						</Link>
-		// 					</Kartica>
-		// 				);
-		// 			})}
+		// // 			{listaMenija.map((element) => {
+		// // 				const elNum = listaMenija.indexOf(element);
+		// // 				if (elNum === 2) {
+		// // 					return (
+		// // 						<React.Fragment key={elNum}>
+		// // 							<div
+		// // 								style={{
+		// // 									gridRow: `span ${Math.ceil(listaMenija.length / 2)}`,
+		// // 								}}
+		// // 								className="border-l-2 col-span-3 border-gray-400 w-full"
+		// // 							>
+		// // 								<motion.div
+		// // 									className="w-full py-4 flex flex-col gap-8 p-12"
+		// // 									animate={fade ? { opacity: 0 } : { opacity: 1 }}
+		// // 								>
+		// // 									{listaMenija[desnoState].desno}
+		// // 								</motion.div>
+		// // 							</div>
+		// // 							<Kartica>
+		// // 								<Link
+		// // 									className="text-gray-600  text-left font-semibold text-base hover:underline underline-offset-2"
+		// // 									onMouseEnter={() => setDesnoState(elNum)}
+		// // 									href={`/${ime}/${element.ime.replaceAll(" ", "-").toLowerCase()}`}
+		// // 								>
+		// // 									{element.ime}
+		// // 								</Link>
+		// // 							</Kartica>
+		// // 						</React.Fragment>
+		// // 					);
+		// // 				}
+		// // 				return (
+		// // 					<Kartica key={elNum}>
+		// // 						<Link
+		// // 							onMouseEnter={() => setDesnoState(elNum)}
+		// // 							className="text-gray-600 font-semibold text-base hover:underline underline-offset-2"
+		// // 							href={`/${ime}/${element.ime.replaceAll(" ", "-").toLowerCase()}`}
+		// // 						>
+		// // 							{element.ime}
+		// // 						</Link>
+		// // 					</Kartica>
+		// // 				);
+		// // 			})}
 		// 		</motion.div>
 		// 	)}
 		// </AnimatePresence>
@@ -140,6 +142,7 @@ const NavMeni = ({
 					<div className="grid grid-rows-9 h-full items-between font-medium md:text-lg ">
 						{list.map((li, i) => (
 							<Link
+								key={i}
 								className={`${birac == i && "font-extrabold"} capitalize`}
 								onMouseOver={() => setBirac(i)}
 								href={`/${handleSlug(li.replaceAll(" ", "-"))}`}
@@ -148,17 +151,29 @@ const NavMeni = ({
 							</Link>
 						))}
 					</div>{" "}
-					<div className="grid grid-rows-8 h-full items-between bg-red-200">
-						<p>proizvodi</p>
-						<p>proizvodi</p>
-						<p>proizvodi</p>
-						<p>proizvodi</p>
-						<p>proizvodi</p>
-						<p>proizvodi</p>
-						<p>proizvodi</p>
-						<p>proizvodi</p>
+					<div className="grid grid-rows-8 h-full items-between ">
+						{listaMenija.length ? (
+							<>
+								{listaMenija.map((element, i) => {
+									return (
+										<Link
+											onMouseOver={() => setDesnoState(i)}
+											key={i}
+											href={element.ime}
+										>
+											{listaMenija.length}
+											{element.ime}
+										</Link>
+									);
+								})}
+							</>
+						) : (
+							"s"
+						)}
 					</div>{" "}
-					<div className="col-span-2 bg-red-200 ">padasd</div>
+					<div className="col-span-2 h-full ">
+						{listaMenija[desnoState] ? listaMenija[desnoState].desno : "dasd"}
+					</div>
 				</motion.div>
 			)}
 		</AnimatePresence>
