@@ -151,29 +151,45 @@ const NavMeni = ({
 							</Link>
 						))}
 					</div>{" "}
-					<div className="grid grid-rows-8 h-full items-between ">
-						{listaMenija.length > 1 ? (
-							<>
-								{listaMenija.map((element, i) => {
-									return (
-										<Link
-											onMouseOver={() => setDesnoState(i)}
-											key={i}
-											href={element.ime}
-										>
-											{listaMenija.length}
-											{element.ime}
-										</Link>
-									);
-								})}
-							</>
-						) : (
-							"s"
-						)}
-					</div>{" "}
-					<div className="col-span-2 h-full ">
-						{listaMenija[desnoState] ? listaMenija[desnoState].desno : "dasd"}
-					</div>
+					{listaMenija.length > 1 ? (
+						<>
+							<div className="grid grid-rows-8 h-full items-between ">
+								<>
+									{listaMenija.map((element, i) => {
+										return (
+											<Link
+												onMouseOver={() => setDesnoState(i)}
+												key={i}
+												href={element.ime}
+											>
+												{listaMenija.length}
+												{element.ime}
+											</Link>
+										);
+									})}
+								</>
+							</div>{" "}
+							<div className="col-span-2 h-full ">
+								{listaMenija[desnoState]
+									? listaMenija[desnoState].desno
+									: "dasd"}
+							</div>
+						</>
+					) : (
+						<div className="w-full flex flex-col items-center gap-4 col-span-3 relative">
+							<h3 className="w-full text-center text-4xl font-semibold">
+								Partneri
+							</h3>
+							<div className="pointer-events-none justify-center absolute gap-12 top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 h-[500px] w-[500px] rounded-full bg-green-400/50 blur-[110px] -z-10" />
+							<p className="text-balance text-center mt-8 max-w-[30em]">
+								Ljudi koji nam pomazu da radimo ono sto volimo da radimo. Oni
+								koji znaju. Oni koji magiju cine stvarnom
+							</p>
+							<button className="border-blue-950 text-lg cursor-pointer px-4 py-2 font-medium opacity-85 rounded-md border-2 mt-12">
+								Klikni ovde
+							</button>
+						</div>
+					)}
 				</motion.div>
 			)}
 		</AnimatePresence>
