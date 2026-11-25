@@ -215,26 +215,32 @@ export default function ScadaPage() {
           </div>
         </section>
 
-        {/* KONTAKT */}
-        <section className="flex flex-col items-start justify-between gap-5 border-t border-blue-950/15 pt-7 md:flex-row md:items-center">
-          <div>
-            <h2 className="text-xl font-semibold">
-              Potrebno vam je SCADA rešenje?
-            </h2>
+        {/* KONTAKT SEKCIJA */}
+        <section className="bg-green px-6 py-20 text-blue-950 md:px-12 lg:px-20">
+          <div className="mx-auto flex max-w-7xl flex-col items-start justify-between gap-8 md:flex-row md:items-center">
+            <div>
+              <span className="text-xs font-semibold uppercase tracking-[0.2em] text-blue-950">
+                O2 Process Solutions
+              </span>
 
-            <p className="mt-2 text-sm text-blue-950/65">
-              Kontaktirajte nas za dodatne informacije o implementaciji i
-              održavanju SCADA sistema.
-            </p>
+              <h2 className="mt-4 max-w-2xl text-3xl font-semibold tracking-tight md:text-4xl">
+                Potrebna vam je pomoć
+              </h2>
+
+              <p className="mt-4 max-w-xl leading-relaxed text-blue-950">
+                Kontaktirajte nas za dodatne informacije o proizvodima i
+                dostupnim rešenjima.
+              </p>
+            </div>
+
+            <Link
+              href="/kontakt"
+              className="inline-flex shrink-0 items-center gap-5  px-7 py-4 font-semibold text-blue-950 transition-colors duration-300 hover:bg-blue-50"
+            >
+              Kontaktirajte nas
+              <ArrowUpRight size={20} />
+            </Link>
           </div>
-
-          <Link
-            href="/kontakt"
-            className="inline-flex items-center gap-3 bg-green px-6 py-3 text-sm font-semibold text-blue-950 transition hover:brightness-110"
-          >
-            Kontaktirajte nas
-            <ArrowUpRight size={18} />
-          </Link>
         </section>
       </div>
     </main>

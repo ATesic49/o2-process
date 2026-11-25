@@ -242,7 +242,7 @@ export const listaMenija = [
 
   [
     {
-      ime: "Procesna Merna Oprema",
+      ime: "Rešenja za efikasno upravljanje u sistemu vodosnabdevanja",
 
       desno: (
         <div className="flex flex-col gap-4 ">
@@ -664,7 +664,7 @@ export const listaMenija = [
 
   [
     {
-      ime: "Procesna Merna Oprema",
+      ime: "placeholder",
 
       desno: (
         <div className="flex flex-col gap-4 ">
@@ -702,7 +702,7 @@ export const listaMenija = [
     },
 
     {
-      ime: "Data Logeri i RTU",
+      ime: "placeholder",
 
       desno: (
         <div className="flex flex-col gap-4 ">
@@ -740,7 +740,7 @@ export const listaMenija = [
     },
 
     {
-      ime: "Data Logeri i RTU",
+      ime: "placeholder",
 
       desno: (
         <div className="flex flex-col gap-4 ">
@@ -778,7 +778,7 @@ export const listaMenija = [
     },
 
     {
-      ime: "Data Logeri i RTU",
+      ime: "placeholder",
 
       desno: (
         <div className="flex flex-col gap-4 ">
@@ -816,7 +816,7 @@ export const listaMenija = [
     },
 
     {
-      ime: "Data Logeri i RTU",
+      ime: "placeholder",
 
       desno: (
         <div className="flex flex-col gap-4 ">
@@ -854,7 +854,7 @@ export const listaMenija = [
     },
 
     {
-      ime: "Data",
+      ime: "placeholder",
 
       desno: (
         <div className="flex flex-col gap-4 ">
@@ -896,7 +896,7 @@ export const listaMenija = [
 
   [
     {
-      ime: "Procesna Merna Oprema",
+      ime: "placeholder",
 
       desno: (
         <div className="flex flex-col gap-4 ">
@@ -934,7 +934,7 @@ export const listaMenija = [
     },
 
     {
-      ime: "Data Logeri i RTU",
+      ime: "placeholder",
 
       desno: (
         <div className="flex flex-col gap-4 ">
@@ -972,7 +972,7 @@ export const listaMenija = [
     },
 
     {
-      ime: "Data Logeri i RTU",
+      ime: "placeholder",
 
       desno: (
         <div className="flex flex-col gap-4 ">
@@ -1010,7 +1010,7 @@ export const listaMenija = [
     },
 
     {
-      ime: "Data Logeri i RTU",
+      ime: "placeholder",
 
       desno: (
         <div className="flex flex-col gap-4 ">
@@ -1048,7 +1048,7 @@ export const listaMenija = [
     },
 
     {
-      ime: "NE DATA",
+      ime: "placeholder",
 
       desno: (
         <div className="flex flex-col gap-4 ">
@@ -1086,7 +1086,7 @@ export const listaMenija = [
     },
 
     {
-      ime: "Data",
+      ime: "placeholder",
 
       desno: (
         <div className="flex flex-col gap-4 ">

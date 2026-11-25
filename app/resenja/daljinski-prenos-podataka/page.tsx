@@ -1,37 +1,50 @@
-import Image from "next/image";
+"use client";
+
+import { useEffect } from "react";
 import Link from "next/link";
-import { ArrowUpRight, ArrowRight } from "lucide-react";
-import slika from "@/public/imgs/proizvodPlaceholder.jpg";
+import { ArrowUpRight, Construction } from "lucide-react";
 
-const page = () => {
-  return <div>page</div>;
-};
+export default function Page() {
+  useEffect(() => {
+    document.body.style.overflow = "hidden";
 
-export default page;
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, []);
 
-<section className="bg-green px-6 py-20 text-blue-950 md:px-12 lg:px-20">
-  <div className="mx-auto flex max-w-7xl flex-col items-start justify-between gap-8 md:flex-row md:items-center">
-    <div>
-      <span className="text-xs font-semibold uppercase tracking-[0.2em] text-blue-950">
-        O2 Process Solutions
-      </span>
+  return (
+    <main className="flex h-[calc(100dvh-80px)] w-full items-center justify-center overflow-hidden bg-blue-950 px-6 text-white">
+      <div className="mx-auto max-w-2xl text-center">
+        <div className="mb-8 flex justify-center">
+          <Construction
+            size={48}
+            strokeWidth={1.5}
+            className="text-green-300"
+          />
+        </div>
 
-      <h2 className="mt-4 max-w-2xl text-3xl font-semibold tracking-tight md:text-4xl">
-        Potrebna vam je pomoć pri izboru opreme?
-      </h2>
+        <span className="text-xs font-semibold uppercase tracking-[0.2em] text-green-300">
+          O2 Process Solutions
+        </span>
 
-      <p className="mt-4 max-w-xl leading-relaxed text-blue-950">
-        Kontaktirajte nas za dodatne informacije o proizvodima i dostupnim
-        rešenjima.
-      </p>
-    </div>
+        <h1 className="mt-6 text-4xl font-semibold tracking-tight md:text-6xl">
+          Stranica je u<span className="block text-green-300">izradi.</span>
+        </h1>
 
-    <Link
-      href="/kontakt"
-      className="inline-flex shrink-0 items-center gap-5 bg-white px-7 py-4 font-semibold text-blue-950 transition-colors duration-300 hover:bg-blue-50"
-    >
-      Kontaktirajte nas
-      <ArrowUpRight size={20} />
-    </Link>
-  </div>
-</section>;
+        <p className="mx-auto mt-6 max-w-lg text-lg leading-8 text-blue-100/70">
+          Trenutno radimo na pripremi sadržaja ove stranice. Uskoro će biti
+          dostupno više informacija.
+        </p>
+
+        <Link
+          href="/proizvodi"
+          className="mt-10 inline-flex items-center gap-4 bg-green px-7 py-4 font-semibold text-blue-950 transition hover:brightness-110"
+        >
+          Nazad na proizvode
+          <ArrowUpRight size={20} />
+        </Link>
+      </div>
+    </main>
+  );
+}

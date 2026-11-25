@@ -10,7 +10,7 @@ const proizvodi = [
     opis: "Instrumentacija i merna oprema za pouzdano praćenje i kontrolu industrijskih procesa.",
     slika: slika,
 
-    href: "https://www.o2ps.rs/procesna-merna-oprema/",
+    href: "/proizvodi/procesna-merna-oprema",
   },
   {
     broj: "02",
@@ -18,15 +18,15 @@ const proizvodi = [
     opis: "Specijalizovana rešenja za merenje protoka u delimično ispunjenim cevima i otvorenim kanalima.",
     slika: slika,
 
-    href: "https://www.o2ps.rs/merenje-protoka-na-delimicno-ispunjenim-cevima-i-otvorenim-kanalima/",
+    href: "/proizvodi/merenje-protoka-na-delimicno-ispunjenim-cevima-i-otvorenim-kanalima",
   },
   {
     broj: "03",
-    naziv: "Data logeri",
+    naziv: "Data logeri i RTU",
     opis: "Uređaji za prikupljanje, beleženje i prenos podataka sa mernih sistema.",
     slika: slika,
 
-    href: "https://www.o2ps.rs/data-logeri/",
+    href: "/proizvodi/data-logeri-i-rtu",
   },
   {
     broj: "04",
@@ -34,7 +34,7 @@ const proizvodi = [
     opis: "Uređaji za prikaz, obradu i praćenje mernih podataka u procesnim sistemima.",
     slika: slika,
 
-    href: "https://www.o2ps.rs/displeji-i-flow-kompjuteri/",
+    href: "/proizvodi/displeji-i-flow-kompjuteri",
   },
   {
     broj: "05",
@@ -42,7 +42,7 @@ const proizvodi = [
     opis: "Pumpna oprema za različite zahteve u industrijskim i infrastrukturnim sistemima.",
     slika: slika,
 
-    href: "https://www.o2ps.rs/pumpe/",
+    href: "/proizvodi/pumpe",
   },
   {
     broj: "06",
@@ -50,7 +50,7 @@ const proizvodi = [
     opis: "Oprema za preciznu regulaciju protoka, pritiska i drugih procesnih parametara.",
     slika: slika,
 
-    href: "https://www.o2ps.rs/regulacioni-ventili/",
+    href: "/proizvodi/regulacioni-ventili",
   },
   {
     broj: "07",
@@ -58,7 +58,7 @@ const proizvodi = [
     opis: "Tehnološka oprema namenjena procesima prečišćavanja otpadnih voda i obrade mulja.",
     slika: slika,
 
-    href: "https://www.o2ps.rs/oprema-za-tretman-otpadnih-voda-i-mulja/",
+    href: "/proizvodi/oprema-za-tretman-otpadnih-voda-i-mulja",
   },
   {
     broj: "08",
@@ -66,7 +66,7 @@ const proizvodi = [
     opis: "Kompaktna rešenja za prikupljanje i prepumpavanje otpadnih i drugih voda.",
     slika: slika,
 
-    href: "https://www.o2ps.rs/kompaktne-crpne-stanice/",
+    href: "/proizvodi/kompaktne-crpne-stanice",
   },
 ];
 
@@ -161,8 +161,6 @@ export default function ProizvodiPage() {
                 Kategorije proizvoda
               </h2>
             </div>
-
-            <span className="text-sm text-blue-950/50">08 kategorija</span>
           </div>
 
           <div className="grid grid-cols-1 gap-x-8 gap-y-14 md:grid-cols-2">
@@ -228,7 +226,7 @@ export default function ProizvodiPage() {
             </span>
 
             <h2 className="mt-4 max-w-2xl text-3xl font-semibold tracking-tight md:text-4xl">
-              Potrebna vam je pomoć pri izboru opreme?
+              Potrebna vam je pomoć
             </h2>
 
             <p className="mt-4 max-w-xl leading-relaxed text-blue-950">
@@ -239,7 +237,7 @@ export default function ProizvodiPage() {
 
           <Link
             href="/kontakt"
-            className="inline-flex shrink-0 items-center gap-5 bg-white px-7 py-4 font-semibold text-blue-950 transition-colors duration-300 hover:bg-blue-50"
+            className="inline-flex shrink-0 items-center gap-5  px-7 py-4 font-semibold text-blue-950 transition-colors duration-300 hover:bg-blue-50"
           >
             Kontaktirajte nas
             <ArrowUpRight size={20} />
