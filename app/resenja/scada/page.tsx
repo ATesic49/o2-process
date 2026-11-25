@@ -99,8 +99,8 @@ export default function ScadaPage() {
           </h1>
 
           <p className="mt-5 max-w-4xl text-base leading-8 text-blue-950/75">
-            U kompaniji <strong>MARKO JE PEDER</strong>, ponosni smo na naša
-            SCADA (Supervisory Control and Data Acquisition) rešenja koja
+            U kompaniji <strong>O2 PROCESS SOLUTIONS</strong>, ponosni smo na
+            naša SCADA (Supervisory Control and Data Acquisition) rešenja koja
             omogućavaju superioran nadzor i kontrolu industrijskih procesa. Naša
             SCADA rešenja su dizajnirana da pružaju visoku efikasnost,
             pouzdanost i fleksibilnost u upravljanju složenim sistemima.
@@ -230,7 +230,7 @@ export default function ScadaPage() {
 
           <Link
             href="/kontakt"
-            className="inline-flex items-center gap-3 bg-green px-6 py-3 text-sm font-semibold text-white transition hover:brightness-110"
+            className="inline-flex items-center gap-3 bg-green px-6 py-3 text-sm font-semibold text-blue-950 transition hover:brightness-110"
           >
             Kontaktirajte nas
             <ArrowUpRight size={18} />
